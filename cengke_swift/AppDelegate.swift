@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //设置全局tintcolor
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.init(red: 247/250, green: 174/250, blue: 52/250, alpha: 1)], for: UIControlState.selected)
+        //设置友盟appkey,友盟基本授权
+        UMSocialData.setAppKey("5948e3aef43e483fa70002fb")
+        //处理分享错误
+        UMSocialData.openLog(true)
         return true
     }
 

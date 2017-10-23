@@ -1,0 +1,23 @@
+platform:ios, '8.0'
+use_frameworks!
+target "cengke_swift" do
+pod 'Alamofire', '~> 4.4.0'
+pod 'SwiftyJSON', '~> 3.1.4'
+pod 'UMengSocialCOM', '~> 5.2.1'
+pod 'MBProgressHUD', '~> 1.0.0'
+pod 'ELCImagePickerController'
+pod 'HUPhotoBrowser'
+pod 'MJExtension'
+pod 'SDCycleScrollView', '~> 1.66'
+pod 'AFNetworking', '~> 3.1.0'
+pod 'SDWebImage', '~> 4.0.0'
+pod 'MJRefresh', '~> 3.1.12'
+
+end
+post_install do |installer|
+   installer.pods_project.targets.each do |target|
+       target.build_configurations.each do |config|
+           config.build_settings['SWIFT_VERSION'] = '3.0'
+       end
+   end
+end
